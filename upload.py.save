@@ -1,0 +1,6 @@
+import urllib.request, urllib.parse, urllib.error
+import os,subprocess
+def uploadForTensorboard(path):
+   os.system('tensorboard --logdir .')
+    what_if_tool_path = ('http://51.140.65.63:6006/#whatif&inferenceAddress1=%s&modelName1=my_model&examplesPath=%s' %(urllib.parse.quote('localhost:8500'), urllib.parse.quote(path)))
+    return what_if_tool_path

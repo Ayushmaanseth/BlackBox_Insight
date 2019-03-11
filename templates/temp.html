@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Black-box Algorithm Evaluator</title>
+    </head>
+    <body>
+           {% block jump %}
+       <div>App:
+            <a href="/index">Main</a></div>
+            <a href="/login">Login</a>
+            <a href="/evaluator">Evaluator</a>
+            <a href="/uploadForm">What If Tool for Usage</a>
+            <a href = "/auditor"> Understand your mode</a>
+       <hr>
+           {% endblock %}
+       {% with messages = get_flashed_messages() %}
+           {% if messages %}
+            <ur>
+                {% for message in messages %}
+                    <li>{{ message }}</li>>
+                {% endfor %}
+            </ur>
+           {% endif %}
+       {% endwith %}
+       {% block content %}
+
+       {% endblock %}
+    </body>
+</html>

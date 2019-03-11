@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Upload</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    <h2> Upload a dataset (in CSV format) with first row as columns </h2>
+    <h3> The model in the docker container assumes the format to be protobuf </h3>
+    <h3> As well as the feature spec must be for the same dataset </h3>
+
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.Labels.label }}<br>
+        {{ form.Labels(size=32)}}
+    </p>
+    <p>
+        {{ form.Target.label }}<br>
+        {{ form.Target(size=32) }}
+    </p>
+    <p>
+      {{form.Zero_Value.label}}<br>
+      {{form.Zero_Value(size=10)}}
+      </p>
+    {{ form.file }}
+      <p>{{ form.submit() }}</p>
+
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+           <ur>
+               {% for message in messages %}
+                   <li>{{ message }}</li>
+               {% endfor %}
+           </ur>
+          {% endif %}
+      {% endwith %}
+
+</form>
+</body>
+</html>

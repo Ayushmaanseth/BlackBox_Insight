@@ -1,0 +1,16 @@
+{% extends 'temp.html' %}
+{% block content %}
+     <h1>Data input</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.data1.label }}<br>
+            {{ form.data1(size=32) }}
+        </p>
+        <p>
+            {{ form.data2.label }}<br>
+            {{ form.data2(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

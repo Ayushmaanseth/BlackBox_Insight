@@ -1,0 +1,887 @@
+<img src = "{{user_image}}">
+<img src = "{{plot_image}}">
+
+    <style>
+    table.eli5-weights tr:hover {
+        filter: brightness(85%);
+    }
+</style>
+
+
+
+    
+        <p>Explained as: feature importances</p>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+        
+        <pre>
+XGBoost feature importances; values are numbers 0 <= x <= 1;
+all values sum to 1.
+</pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+        <table class="eli5-weights eli5-feature-importances" style="border-collapse: collapse; border: none; margin-top: 0em; table-layout: auto;">
+    <thead>
+    <tr style="border: none;">
+        <th style="padding: 0 1em 0 0.5em; text-align: right; border: none;">Weight</th>
+        <th style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">Feature</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr style="background-color: hsl(120, 100.00%, 80.00%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.3329
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Relationship
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 87.80%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.1643
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Marital-Status
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 90.09%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.1220
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Education-Num
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 90.92%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.1078
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Capital-Gain
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 93.89%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0612
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Capital-Loss
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 95.85%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0352
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Sex
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 96.00%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0334
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Age
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 96.00%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0334
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Occupation
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 96.18%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0312
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Hours-per-week
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 97.07%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0214
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Workclass
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 97.55%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0166
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Race
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 97.78%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0144
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Country
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 97.82%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0141
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                fnlwgt
+            </td>
+        </tr>
+    
+        <tr style="background-color: hsl(120, 100.00%, 98.03%); border: none;">
+            <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+                0.0121
+                
+            </td>
+            <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+                Education
+            </td>
+        </tr>
+    
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+    <style>
+    table.eli5-weights tr:hover {
+        filter: brightness(85%);
+    }
+</style>
+
+
+
+    
+        <p>Explained as: decision paths</p>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+        
+        <pre>
+Features with largest coefficients.
+
+Feature weights are calculated by following decision paths in trees
+of an ensemble. Each leaf has an output score, and expected scores can also be
+assigned to parent nodes. Contribution of one feature on the decision path
+is how much expected score changes from parent to child. Weights of all 
+features sum to the output score of the estimator.
+
+Caveats:
+1. Feature weights just show if the feature contributed positively or
+   negatively to the final score, and does not show how increasing or
+   decreasing the feature value will change the prediction.
+2. In some cases, feature weight can be close to zero for an important feature.
+   For example, in a single tree that computes XOR function, the feature at the
+   top of the tree will have zero weight because expected scores for both
+   branches are equal, so decision at the top feature does not change the
+   expected score. For an ensemble predicting XOR functions it might not be
+   a problem, but it is not reliable if most trees happen to choose the same
+   feature at the top.
+</pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+        
+
+    
+
+        
+            
+                
+                
+    
+        <p style="margin-bottom: 0.5em; margin-top: 0em">
+            <b>
+    
+        y
+    
+</b>
+
+    
+    (score <b>-5.145</b>)
+
+top features
+        </p>
+    
+    <table class="eli5-weights"
+           style="border-collapse: collapse; border: none; margin-top: 0em; table-layout: auto; margin-bottom: 2em;">
+        <thead>
+        <tr style="border: none;">
+            
+                <th style="padding: 0 1em 0 0.5em; text-align: right; border: none;" title="Feature contribution already accounts for the feature value (for linear models, contribution = weight * feature value), and the sum of feature contributions is equal to the score or, for some classifiers, to the probability. Feature values are shown if &quot;show_feature_values&quot; is True.">
+                    Contribution<sup>?</sup>
+                </th>
+            
+            <th style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">Feature</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        
+            <tr style="background-color: hsl(120, 100.00%, 97.02%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.090
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        fnlwgt
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 97.84%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.057
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Education
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 99.75%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.003
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Workclass
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 99.78%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.002
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Country
+    </td>
+    
+</tr>
+        
+        
+
+        
+        
+            <tr style="background-color: hsl(0, 100.00%, 99.32%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.011
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Race
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 98.48%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.034
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Capital-Loss
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 97.96%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.052
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Education-Num
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 96.31%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.122
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Capital-Gain
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 91.26%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.418
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Occupation
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 90.29%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.486
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Marital-Status
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 88.68%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.605
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Hours-per-week
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 87.57%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.692
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Sex
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 87.42%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.703
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Relationship
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 86.12%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.810
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Age
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 80.00%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -1.364
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        &lt;BIAS&gt;
+    </td>
+    
+</tr>
+        
+
+        </tbody>
+    </table>
+
+            
+        
+
+        
+
+
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+    <style>
+    table.eli5-weights tr:hover {
+        filter: brightness(85%);
+    }
+</style>
+
+
+
+    
+        <p>Explained as: decision paths</p>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+        
+        <pre>
+Features with largest coefficients.
+
+Feature weights are calculated by following decision paths in trees
+of an ensemble. Each leaf has an output score, and expected scores can also be
+assigned to parent nodes. Contribution of one feature on the decision path
+is how much expected score changes from parent to child. Weights of all 
+features sum to the output score of the estimator.
+
+Caveats:
+1. Feature weights just show if the feature contributed positively or
+   negatively to the final score, and does not show how increasing or
+   decreasing the feature value will change the prediction.
+2. In some cases, feature weight can be close to zero for an important feature.
+   For example, in a single tree that computes XOR function, the feature at the
+   top of the tree will have zero weight because expected scores for both
+   branches are equal, so decision at the top feature does not change the
+   expected score. For an ensemble predicting XOR functions it might not be
+   a problem, but it is not reliable if most trees happen to choose the same
+   feature at the top.
+</pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+        
+
+    
+
+        
+            
+                
+                
+    
+        <p style="margin-bottom: 0.5em; margin-top: 0em">
+            <b>
+    
+        y
+    
+</b>
+
+    
+    (score <b>1.046</b>)
+
+top features
+        </p>
+    
+    <table class="eli5-weights"
+           style="border-collapse: collapse; border: none; margin-top: 0em; table-layout: auto; margin-bottom: 2em;">
+        <thead>
+        <tr style="border: none;">
+            
+                <th style="padding: 0 1em 0 0.5em; text-align: right; border: none;" title="Feature contribution already accounts for the feature value (for linear models, contribution = weight * feature value), and the sum of feature contributions is equal to the score or, for some classifiers, to the probability. Feature values are shown if &quot;show_feature_values&quot; is True.">
+                    Contribution<sup>?</sup>
+                </th>
+            
+            <th style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">Feature</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        
+            <tr style="background-color: hsl(120, 100.00%, 82.82%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +1.098
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Education-Num
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 88.75%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.599
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Occupation
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 89.95%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.510
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Hours-per-week
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 89.99%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.507
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Relationship
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 91.07%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.431
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Marital-Status
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 95.59%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.157
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        fnlwgt
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 97.71%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.062
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Workclass
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 98.27%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.041
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Sex
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(120, 100.00%, 98.79%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        +0.025
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Country
+    </td>
+    
+</tr>
+        
+        
+
+        
+        
+            <tr style="background-color: hsl(0, 100.00%, 98.85%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.023
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Education
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 96.31%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.122
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Capital-Loss
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 95.13%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.181
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Race
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 94.72%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.204
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Capital-Gain
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 90.21%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -0.491
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        Age
+    </td>
+    
+</tr>
+        
+            <tr style="background-color: hsl(0, 100.00%, 80.00%); border: none;">
+    <td style="padding: 0 1em 0 0.5em; text-align: right; border: none;">
+        -1.364
+    </td>
+    <td style="padding: 0 0.5em 0 0.5em; text-align: left; border: none;">
+        &lt;BIAS&gt;
+    </td>
+    
+</tr>
+        
+
+        </tbody>
+    </table>
+
+            
+        
+
+        
+
+
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
