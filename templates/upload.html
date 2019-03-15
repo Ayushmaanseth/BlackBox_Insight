@@ -1,8 +1,6 @@
-<html>
-<head>
-<title>Upload</title>
-</head>
-<body>
+{% extends 'temp.html' %}
+
+     {% block content %}
 <form method="post" enctype="multipart/form-data">
     <h2> Upload a dataset (in CSV format) with first row as columns </h2>
     <h3> The model in the docker container assumes the format to be protobuf </h3>
@@ -35,5 +33,4 @@
       {% endwith %}
 
 </form>
-</body>
-</html>
+     {% endblock %}

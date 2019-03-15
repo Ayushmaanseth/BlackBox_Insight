@@ -1,30 +1,53 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Black-box Algorithm Evaluator</title>
-    </head>
-    <body>
-           {% block jump %}
-       <div>App:
-            <a href="/index">Main</a></div>
-            <a href="/login">Login</a>
-            <a href="/evaluator">Evaluator</a>
-            <a href="/uploadForm">What If Tool for Usage</a>
-            <a href = "/auditor"> Understand your mode</a>
-       <hr>
-           {% endblock %}
-       {% with messages = get_flashed_messages() %}
-           {% if messages %}
-            <ur>
-                {% for message in messages %}
-                    <li>{{ message }}</li>>
-                {% endfor %}
-            </ur>
-           {% endif %}
-       {% endwith %}
-       {% block content %}
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blog.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontello.css') }}">
+    <style>
+        .side-nav {display: none;}
+    </style>
+	
+</head>
 
-       {% endblock %}
-    </body>
+<body>
+	<div class="container">
+		<div id="header" class="site-header headroom">
+            <div class="site-wrap">
+           {% block jump %}
+		        <div class="site-logo">
+                    <a href="/" class="logo">
+                        {% if admin %}{{ admin.site_name }}
+                        {% else %}Black-box Algorithm Evaluator{% endif %}
+                    </a>
+                    <span>{% if admin %}{{ admin.site_title }}{% else %}Team 11{% endif %}</span>
+                </div>
+				
+                <div class="site-nav">
+                    <ul id="menu" class="menu">
+                        <li class="menu-item"><a href="/index">MAIN</a></li>
+						<li class="menu-item"><a href="/login">LOGIN</a></li>
+						<li class="menu-item"><a href="/evaluator">EVALUATOR</a></li>
+						<li class="menu-item"><a href="/uploadForm">WHATIF TOOL</a>
+						<li class="menu-item"><a href = "/auditor"> UNDERSTAND MODE</a>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+			{% endblock %}
+		    </div>
+		</div>
+		
+	<div class="site-wrap main-container">
+		<div class="site-wrap main-container">
+	        <div class="main">
+                {% block content %}
+                {% endblock %}
+            </div>
+		</div>
+	</div>
+</body>
 </html>
