@@ -2,9 +2,9 @@
 
      {% block content %}
 <form method="post" enctype="multipart/form-data">
-    <h2> Upload a dataset (in CSV format) with first row as columns </h2>
-    <h3> The model in the docker container assumes the format to be protobuf </h3>
-    <h3> As well as the feature spec must be for the same dataset </h3>
+    <h2><p class="sansserif"> Upload a dataset (in CSV format) with first row as columns </p></h2>
+    <h3><p class="sansserif"> The model in the docker container assumes the format to be protobuf </p></h3>
+    <h3><p class="sansserif"> As well as the feature spec must be for the same dataset </p></h3>
 
     {{ form.hidden_tag() }}
     <p>
