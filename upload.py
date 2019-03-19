@@ -115,6 +115,64 @@ def my_input_fn(features, targets, batch_size=1, shuffle=True, num_epochs=None):
 
 def run_model(file_path,model_path,columns,target,zero_value=None):
     csv_path = file_path
+    file_name = csv_path.split('/')[-1]
+    file_first_name = file_name.split('.')[0]
+    os.chdir('/home/datasets')
+    if file_first_name in os.listdir():
+        print("Dataset and model already there")
+        tfrecord_path = '/home/datasets/' + file_first_name + '/' + file_first_name + '.tfrecord'
+        model_path = '/home/datasets/' + file_first_name + '/' + 'trained_model'
+
+    else:
+        print("Dataset and model not there")
+        os.mkdir('/home/datasets/' + file_first_name)
+        tfrecord_path = '/home/datasets/' + file_first_name + '/' + file_first_name + '.tfrecord'
+        print("Dataset dir created at",tfrecord_path)
+        os.mkdir('/home/datasets/' + file_first_name + '/' + 'trained_model')
+        model_path = '/home/datasets/' + file_first_name + '/' + 'trained_model'
+        print("Model dir created at",model_path)
+        df = pd.read_csv(csv_path,names=columns,skipinitialspace=True)
+
+        #csv_columns = df.columns.values.tolist()
+        #print(columns)
+        print("File read...columns = ",columns)
+        target_column = target
+        if target_column not in columns:
+            print("target column error")
+            return("target column error")
+        elif zero_value not in df[target_column].tolist():
+            print(zero_value == df[target_column].tolist()[1])
+            return("zero value error")
+        df[target] = np.where(df[target] == zero_value, 0, 1)
+        input_features = columns
+        if target_column in input_features:
+            input_features.remove(target_column)
+        print(input_features)
+        features_and_labels = input_features + [target_column]
+        print(features_and_labels)
+        #tfrecord_path = '/home/datasets/data.tfrecord'
+        print("Features and labels recorded...")
+        write_df_as_tfrecord(df,tfrecord_path)
+        print("Dataset saved at ",tfrecord_path)
+        feature_spec = create_feature_spec(df,features_and_labels)
+        train_inpf = functools.partial(tfrecords_input_fn, tfrecord_path,
+                                        feature_spec, target_column)
+        classifier = tf.estimator.LinearClassifier(feature_columns=create_feature_columns(df,input_features, feature_spec))
+        classifier.train(train_inpf, steps=1000)
+        print("Model trained...")
+        serving_input_fn = tf.estimator.export.build_parsing_serving_input_receiver_fn(feature_spec)
+        classifier.export_savedmodel(model_path, serving_input_fn)
+        print("Model exported at ",model_path)
+
+    os.system('docker run -p 8500:8500 --mount type=bind,source=%s,target=/models/my_model/ -e MODEL_NAME=my_model -t tensorflow/serving &' % model_path)
+    what_if_tool_path = ('http://localhost:6006/#whatif&inferenceAddress1=%s&modelName1=my_model&examplesPath=%s'
+                            %(urllib.parse.quote('localhost:8500'), urllib.parse.quote(tfrecord_path)))
+    print(what_if_tool_path)
+    return what_if_tool_path
+    #return tfrecord_path
+
+def run_protobuf_model(tfrecord_path,model_path,labels,target,zero_value):
+    csv_path = file_path
 
     df = pd.read_csv(csv_path,names=columns,skipinitialspace=True)
     #csv_columns = df.columns.values.tolist()
@@ -138,19 +196,9 @@ def run_model(file_path,model_path,columns,target,zero_value=None):
     print("Features and labels recorded...")
     write_df_as_tfrecord(df,tfrecord_path)
     print("Dataset saved at ",tfrecord_path)
-    feature_spec = create_feature_spec(df,features_and_labels)
-    train_inpf = functools.partial(tfrecords_input_fn, tfrecord_path,
-                                    feature_spec, target_column)
-    classifier = tf.estimator.LinearClassifier(feature_columns=create_feature_columns(df,input_features, feature_spec))
-    classifier.train(train_inpf, steps=1000)
-    print("Model trained...")
-    serving_input_fn = tf.estimator.export.build_parsing_serving_input_receiver_fn(feature_spec)
-    classifier.export_savedmodel(model_path, serving_input_fn)
-    print("Model exported at ",model_path)
 
-    os.system('docker run -p 8500:8500 --mount type=bind,source=%s,target=/models/my_model/ -e MODEL_NAME=my_model -t tensorflow/serving &' % model_path)
+    command = ('docker run -p 8500:8500 --mount type=bind,source=%s,target=/models/my_model/ -e MODEL_NAME=my_model -t tensorflow/serving &' % model_path)
     what_if_tool_path = ('http://localhost:6006/#whatif&inferenceAddress1=%s&modelName1=my_model&examplesPath=%s'
                             %(urllib.parse.quote('localhost:8500'), urllib.parse.quote(tfrecord_path)))
     print(what_if_tool_path)
     return what_if_tool_path
-    #return tfrecord_path

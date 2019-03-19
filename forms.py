@@ -22,3 +22,11 @@ class TestForm(FlaskForm):
     Zero_Value = StringField('Zero Value',validators=[DataRequired(message="Enter the target value corresponding to prediction = 0")])
     file = FileField('CSV File',validators=[FileRequired(),FileAllowed(['csv'])])
     submit = SubmitField('Submit Form')
+
+
+class ExplainForm(FlaskForm):
+    Labels = StringField('Labels',validators=[DataRequired(message="Input labels separated by comma")])
+    Target = StringField('Target',validators=[DataRequired(message="Enter the target column")])
+    Zero_Value = StringField('Zero Value',validators=[DataRequired(message="Enter the target value corresponding to prediction = 0")])
+    file = FileField('CSV File',validators=[FileRequired(),FileAllowed(['csv'])])
+    submit = SubmitField('Submit Form')

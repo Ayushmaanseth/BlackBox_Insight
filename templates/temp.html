@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+
     <title>Black-box Algorithm Evaluator</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blog.css') }}">
@@ -13,7 +13,7 @@
         .side-nav {display: none;}
 		.sansserif{font-family:Arial,Helvetica,sans-serif;}
     </style>
-	
+
 </head>
 
 <body>
@@ -28,21 +28,23 @@
                     </a>
                     <span>{% if admin %}{{ admin.site_title }}{% else %}Team 11{% endif %}</span>
                 </div>
-				
+
                 <div class="site-nav">
+
                     <ul id="menu" class="menu">
-                        <li class="menu-item"><a href="/index">MAIN</a></li>
-						<li class="menu-item"><a href="/login">LOGIN</a></li>
-						<li class="menu-item"><a href="/evaluator">EVALUATOR</a></li>
-						<li class="menu-item"><a href="/uploadForm">WHATIF TOOL</a>
-						<li class="menu-item"><a href = "/auditor"> UNDERSTAND MODE</a>
+                        <a href="https://www.nhs.uk">
+                          <img src="../static/nhs.png"height="30" width="70" style="position:absolute;left:20px;bottom:10px"
+                        </a>
+						<li class="menu-item"><a href="/login">Sign In</a></li>
+						<li class="menu-item"><a href="/uploadForm">What-If Counterfactual</a>
+						<li class="menu-item"><a href = "/auditor"> Feature Importance</a>
                     </ul>
                     <div class="clear"></div>
                 </div>
 			{% endblock %}
 		    </div>
 		</div>
-		
+
 	<div class="site-wrap main-container">
 		<div class="site-wrap main-container">
 	        <div class="main">
