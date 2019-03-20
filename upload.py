@@ -11,6 +11,7 @@ import functools
 import urllib.request, urllib.parse, urllib.error
 import webbrowser
 import eli5
+
 def upload_for_tensorboard(file_path,model_path=None):
     os.system('tensorboard --logdir . &')
     #os.system('docker run -p 8500:8500 --mount type=bind,source=%s,target=/models/my_model/ -e MODEL_NAME=my_model -t tensorflow/serving &' % model_path)
@@ -124,7 +125,7 @@ def run_model(file_path,model_path,columns,target,zero_value=None):
         model_path = '/home/datasets/' + file_first_name + '/' + 'trained_model'
 
     else:
-        print("Dataset and model not there")
+        print("Dataset and model not there, creating dir...")
         os.mkdir('/home/datasets/' + file_first_name)
         tfrecord_path = '/home/datasets/' + file_first_name + '/' + file_first_name + '.tfrecord'
         print("Dataset dir created at",tfrecord_path)

@@ -24,6 +24,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -133,7 +134,7 @@ def audit_model():
             return redirect(request.url)
 
         else:
-            return render_template('explanation.html',user_image='static/summary_plot.png',plot_image='static/summary_plot2.png')
+            return render_template('explanation.html')
 
     return render_template('upload2.html',title='Form Uploader',form=form)
 
@@ -177,4 +178,4 @@ def explainFile():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

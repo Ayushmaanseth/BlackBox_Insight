@@ -141,6 +141,7 @@ h2:after {
     text-decoration: none;
     color: #df846c;
     font-size: 24px;
+
 }
 
 .site-logo .logo:hover {
@@ -267,7 +268,7 @@ ul#drop a:hover {
     margin-top: 65px;
     width: 240px;
     float: right;
-    
+
 }
 
 /*update*/
@@ -689,8 +690,8 @@ span.post-time {
     height: 0;
     border-top: 15px solid transparent;
     border-bottom: 30px solid #ccc;
-    border-left: 15px solid transparent; 
-    border-right: 15px solid transparent; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
 }
 
 
@@ -1494,4 +1495,8 @@ ul.comment-children .comment-time {
     display: none;
 }
 
-
+.nhs_logo{
+  position: absolute;
+  left:10px;
+  bottom:10px;
+}

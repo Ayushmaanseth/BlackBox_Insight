@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Black-box Algorithm Evaluator</title>
+    <title>CareAI Transparency</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blog.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontello.css') }}">
@@ -17,24 +17,27 @@
 </head>
 
 <body>
+
 	<div class="container">
 		<div id="header" class="site-header headroom">
+
             <div class="site-wrap">
            {% block jump %}
+           <a href="https://www.nhs.uk">
+             <img src="../static/nhs.png"height="30" width="70" class="nhs_logo" >
+           </a>
 		        <div class="site-logo">
+
                     <a href="/" class="logo">
                         {% if admin %}{{ admin.site_name }}
-                        {% else %}Black-box Algorithm Evaluator{% endif %}
+                        {% else %}CareAI Transparency{% endif %}
                     </a>
                     <span>{% if admin %}{{ admin.site_title }}{% else %}Team 11{% endif %}</span>
                 </div>
 
                 <div class="site-nav">
-
                     <ul id="menu" class="menu">
-                        <a href="https://www.nhs.uk">
-                          <img src="../static/nhs.png"height="30" width="70" style="position:absolute;left:20px;bottom:10px"
-                        </a>
+
 						<li class="menu-item"><a href="/login">Sign In</a></li>
 						<li class="menu-item"><a href="/uploadForm">What-If Counterfactual</a>
 						<li class="menu-item"><a href = "/auditor"> Feature Importance</a>
