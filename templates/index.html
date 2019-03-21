@@ -2,8 +2,41 @@
 
      {% block content %}
 
-<h1><p class="sansserif">Welcome to Black-box Algorithm Evaluator</p></h1>
+<style>
+     header {
+       padding: 30px;
+       text-align: center;
+       font-size: 35px;
+       width:100%;
+       height:20%;
+     }
+</style>
 
-  
+<script>
+var i = 0;
+var txt = 'An interactive interface to interpret and gain insights on a black-box model :)';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+window.onload = typeWriter;
+</script>
+
+<header class="header-site">
+  <h2>Welcome to CareAI Transparency Interface</h2>
+  <div id="demo">
+
+  </div>
+</header>
+
+
+
+
 
      {% endblock %}
