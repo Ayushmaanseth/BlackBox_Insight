@@ -14,14 +14,14 @@
 		background-position:center top;
      }
 	 .box{
-		justify-content: center;
+		justify-content: left;
 		display:flex;
 	 }
 	 .textbox2{
-		    margin-left: 140px;
+		    margin-left: 160px;
 	 }
 	 .textbox1{
-		    margin-left: 60px;
+		    margin-left: 30px;
 	 }
 	img{
 		border:0;
@@ -54,25 +54,26 @@ window.onload = typeWriter;
 </header>
 
 <body>
+<p align="left">The aim of the project is to be able to interpret and explain in lay terms the various black-box <br />algorithms and artificially intelligent models used in different streams, especially in healthcare <br /> where the slightest of miscalculation can cause catastrophe. <br /><br />The tasks are to explain why a decision was taken, what could have happened if the inputs were <br />something else, how close were the inputs from the decision being flipped and how can we <br />audit the model to make it suitable for the real-world data.  </p>
 <div class="box">
 <img src="../static/images/b.jpg" />
 <img src="../static/images/c.jpg" />
 </div>
 <div class="box">
 <div class="textbox1">
-<p align="left">    
-introduction 1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+<p align="left">
+LIME (Local Interpretable Model-Agnostic Explanations) can recieve the machine learning result and visulize the prediction of any specific sample.
 </p>
 </div>
 
     <div class="textbox2">
-<p align="left">    
-introduction 2dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+<p align="left">
+TensorBoard & What-IF tool can explore datapoint changes and makes it easier to compare multiple models, arrange datapoints by similarity, test algorithmic fairness and compare counterfacts.
 </p>
             </div>
 
 </div>
-<p align="center">there should be some text</p>
+<p align="left">We developed an interactive web app which allows ingestion of any model and a dataset against <br /> which the model is trained to provide insights about the model, explaining how any decision being <br /> made is made and what can cause the decision to change.<br /> <br /> To start the evaluation and visualization, click "Feature Importance" or "What-IF counterfactual" <br /> button on the top-right.<br /> <br /> And then, update the dataset you want to analyze. Input the full name of Labels, Target label and <br /> Zero value.<br /> <br /> Finally, click "Submit From" to start the analyzation. Your dataset and analyzation result will be <br /> securely stored in our server and allow you to download. </p>
 </body>
 
 
