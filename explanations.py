@@ -82,7 +82,7 @@ def run_explanations(csv_path,csv_columns,target_column,zero_value):
     xgb.plot_importance(xgc, importance_type='cover', ax=ax3)
     t=ax3.set_title("Feature Importance - Sample Coverage")
 
-    plt.savefig('static/explanations.png')
+    #plt.savefig('static/explanations.png')
 
     explanation = eli5.explain_weights(xgc.get_booster())
     explanation_html = eli5.formatters.html.format_as_html(explanation)

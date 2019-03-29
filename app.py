@@ -18,7 +18,6 @@ app = Flask(__name__)
 app.config.from_object(Config)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -140,7 +139,7 @@ def audit_model():
 
 @app.route('/explain',methods=['GET','POST'])
 def explainFile():
-    form = TestForm()
+    form = ExplainForm()
     if request.method == 'POST':
         command = "docker kill $(docker ps -q)"
         os.system(command)
@@ -149,6 +148,7 @@ def explainFile():
         labels = labels.split(',')
         target = form.Target.data
         zero_value = form.Zero_Value.data
+        model_path = form.Model_Folder.data
         #if str.isdecimal(zero_value):
         #    zero_value = int(zero_value)
 
@@ -158,7 +158,7 @@ def explainFile():
         form.file.data.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         #uploaded_file(filename,labels,target,zero_value)
-        model_path = MODEL_FOLDER
+        #model_path = MODEL_FOLDER
 
         what_if_path = run_protobuf_model(os.path.join(app.config['UPLOAD_FOLDER'],filename),model_path,labels,target,zero_value)
         if what_if_path == "target column error":
@@ -173,7 +173,7 @@ def explainFile():
             #model_path = MODEL_FOLDER
             #what_if_path = run_model(os.path.join(app.config['UPLOAD_FOLDER'],filename),model_path,labels,target,zero_value)
             return redirect(what_if_path)
-    return render_template('upload.html',title='Form Uploader',form=form)
+    return render_template('explain.html',title='Form Uploader',form=form)
 
 
 

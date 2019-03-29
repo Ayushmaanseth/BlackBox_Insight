@@ -172,10 +172,10 @@ def run_model(file_path,model_path,columns,target,zero_value=None):
     return what_if_tool_path
     #return tfrecord_path
 
-def run_protobuf_model(tfrecord_path,model_path,labels,target,zero_value):
+def run_protobuf_model(file_path,model_path,columns,target,zero_value=None):
     csv_path = file_path
-
     df = pd.read_csv(csv_path,names=columns,skipinitialspace=True)
+
     #csv_columns = df.columns.values.tolist()
     #print(columns)
     print("File read...columns = ",columns)
@@ -198,8 +198,9 @@ def run_protobuf_model(tfrecord_path,model_path,labels,target,zero_value):
     write_df_as_tfrecord(df,tfrecord_path)
     print("Dataset saved at ",tfrecord_path)
 
-    command = ('docker run -p 8500:8500 --mount type=bind,source=%s,target=/models/my_model/ -e MODEL_NAME=my_model -t tensorflow/serving &' % model_path)
+    os.system('docker run -p 8500:8500 --mount type=bind,source=%s,target=/models/my_model/ -e MODEL_NAME=my_model -t tensorflow/serving &' % model_path)
     what_if_tool_path = ('http://localhost:6006/#whatif&inferenceAddress1=%s&modelName1=my_model&examplesPath=%s'
                             %(urllib.parse.quote('localhost:8500'), urllib.parse.quote(tfrecord_path)))
     print(what_if_tool_path)
     return what_if_tool_path
+    #return tfrecord_path
