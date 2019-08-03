@@ -1,6 +1,6 @@
 # BlackBoxInsight
 
-An open source, full-stack tool for interpreting and explaining machine learning models and algorithms, making them fair and accountable. In collaboration with NHS Digital and Code4Health.
+An open source, full-stack tool for interpreting and explaining machine learning models and algorithms, making them fair and accountable. Systems Engineering Project in collaboration with NHS Digital and Code4Health. 
 
 ## Tech stack
   Flask
